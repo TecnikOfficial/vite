@@ -3,7 +3,7 @@ import { defineConfig } from "vite"
 export default defineConfig({
   // Base path for GitHub Pages deployment
   // Change this to match your repository name
-  base: "/vite/",
+  base: "/",
 
   // Development server configuration
   server: {
