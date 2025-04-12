@@ -1,10 +1,9 @@
 import { defineConfig } from "vite"
 
 export default defineConfig({
-  // Base path for deployment
-  // If your repo is username.github.io, use '/'
-  // If your repo is username.github.io/repo-name, use '/repo-name/'
-  base: "/",
+  // Base path for GitHub Pages deployment
+  // Change this to match your repository name
+  base: "/vite/",
 
   // Development server configuration
   server: {
