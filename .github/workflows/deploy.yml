@@ -19,10 +19,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        # Using npm install instead of npm ci since we might not have a lock file
+        run: npm install
 
       - name: Build
         run: npm run build
@@ -31,4 +31,3 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-
