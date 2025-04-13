@@ -1,20 +1,6 @@
-import { defineConfig } from "vite"
+import { defineConfig } from 'vite';
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  // Base path for GitHub Pages deployment
-  base: "/",
-
-  // Development server configuration
-  server: {
-    port: 3000,
-    open: true,
-  },
-
-  // Build configuration
-  build: {
-    outDir: "dist",
-    assetsDir: "assets",
-    minify: "terser",
-    sourcemap: false,
-  },
-})
+  base: '/vite/', // Adjust this if your repo name is different
+});
