@@ -12,9 +12,12 @@ export default defineConfig({
     minify: "terser", // Use terser for better minification
     sourcemap: false, // Disable sourcemaps for production
 
-    // Ensure the build doesn't fail on warnings
+    // Optimize chunks
     rollupOptions: {
       output: {
+        manualChunks: {
+          vendor: ["instant.page"],
+        },
         // Ensure assets are properly referenced
         assetFileNames: "assets/[name].[hash].[ext]",
         chunkFileNames: "assets/[name].[hash].js",
@@ -30,13 +33,18 @@ export default defineConfig({
     cors: true, // Enable CORS
   },
 
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ["instant.page"],
+  },
+
+  // Enable asset optimization
+  assetsInclude: ["**/*.webp", "**/*.avif", "**/*.webm", "**/*.svg", "**/*.gif"],
+
   // Resolve paths
   resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
     },
   },
-
-  // Ensure the build doesn't fail on warnings
-  logLevel: "info",
 })
