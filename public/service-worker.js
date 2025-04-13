@@ -3,8 +3,8 @@ const CACHE_NAME = "tecnik-site-cache-v1"
 const urlsToCache = [
   "/",
   "/index.html",
-  "/src/main.js",
-  "/src/style.css",
+  "/assets/main.js",
+  "/assets/style.css",
   "https://tecnik.pages.dev/assets/media/video.webm",
   "https://tecnik.pages.dev/assets/media/tecnikmain4.avif",
   "https://tecnik.pages.dev/assets/media/donate.webp",

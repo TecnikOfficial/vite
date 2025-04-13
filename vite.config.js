@@ -1,8 +1,9 @@
 import { defineConfig } from "vite"
+import { resolve } from "path"
 
 export default defineConfig({
   // Base path for GitHub Pages deployment
-  base: "/vite/",
+  base: "/",
 
   // Development server configuration
   server: {
@@ -16,8 +17,14 @@ export default defineConfig({
     assetsDir: "assets",
     minify: "terser",
     sourcemap: false,
+    emptyOutDir: true,
+    // Ensure assets are copied
+    copyPublicDir: true,
     // Optimize chunks
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+      },
       output: {
         manualChunks: {
           vendor: ["src/modules/yearTimer.js", "src/modules/textSlider.js"],
