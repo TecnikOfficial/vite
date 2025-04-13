@@ -30,15 +30,11 @@ jobs:
         run: npm install
         
       - name: Build
-        run: npm run build || { echo "Build failed"; exit 1; }
+        run: npm run build
         
-      - name: Debug - List directory contents
-        run: |
-          echo "Current directory:"
-          ls -la
-          echo "Dist directory:"
-          ls -la dist || echo "dist directory does not exist"
-          
+      - name: List files after build
+        run: ls -la
+        
       - name: Setup Pages
         uses: actions/configure-pages@v4
         
