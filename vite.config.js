@@ -11,15 +11,6 @@ export default defineConfig({
     emptyOutDir: true, // Empty the output directory before building
     minify: "terser", // Use terser for better minification
     sourcemap: false, // Disable sourcemaps for production
-
-    // Optimize chunks
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ["instant.page"],
-        },
-      },
-    },
   },
 
   // Server configuration for development
@@ -36,7 +27,4 @@ export default defineConfig({
 
   // Enable asset optimization
   assetsInclude: ["**/*.webp", "**/*.avif", "**/*.webm", "**/*.svg", "**/*.gif"],
-
-  // Security headers
-  plugins: [],
 })
