@@ -2,9 +2,8 @@ import { defineConfig } from "vite"
 import { resolve } from "path"
 
 export default defineConfig({
-  // Base path for GitHub Pages
-  // Use empty string for root deployment or '/repo-name/' for project deployment
-  base: "./",
+  // Base path specifically for TecnikOfficial/vite repository
+  base: "/vite/",
 
   // Build configuration
   build: {
@@ -13,12 +12,9 @@ export default defineConfig({
     minify: "terser", // Use terser for better minification
     sourcemap: false, // Disable sourcemaps for production
 
-    // Optimize chunks
+    // Ensure the build doesn't fail on warnings
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ["instant.page"],
-        },
         // Ensure assets are properly referenced
         assetFileNames: "assets/[name].[hash].[ext]",
         chunkFileNames: "assets/[name].[hash].js",
@@ -34,18 +30,13 @@ export default defineConfig({
     cors: true, // Enable CORS
   },
 
-  // Optimize dependencies
-  optimizeDeps: {
-    include: ["instant.page"],
-  },
-
-  // Enable asset optimization
-  assetsInclude: ["**/*.webp", "**/*.avif", "**/*.webm", "**/*.svg", "**/*.gif"],
-
   // Resolve paths
   resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
     },
   },
+
+  // Ensure the build doesn't fail on warnings
+  logLevel: "info",
 })

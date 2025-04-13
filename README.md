@@ -14,7 +14,7 @@ This is the official website for TecNik, built with Vite for optimal performance
 
 To run this project locally:
 
-1. Clone the repository
+1. Clone the repository: `git clone https://github.com/TecnikOfficial/vite.git`
 2. Install dependencies: `npm install`
 3. Start the development server: `npm run dev`
 4. Build for production: `npm run build`
@@ -22,6 +22,8 @@ To run this project locally:
 ## Deployment
 
 This project is set up for automatic deployment to GitHub Pages. Simply push to the main branch, and the GitHub Actions workflow will handle the build and deployment process.
+
+The site will be available at: https://tecnikofficial.github.io/vite/
 
 ## Technologies Used
 
