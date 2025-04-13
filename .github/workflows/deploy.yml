@@ -27,17 +27,29 @@ jobs:
         with:
           node-version: '20'
           
+      - name: Debug - List files before install
+        run: ls -la
+          
       - name: Install dependencies
         run: npm install
         
-      - name: Build
-        run: npm run build
-      
-      - name: Debug - List directory contents
+      - name: Debug - Check Vite installation
+        run: |
+          echo "Checking if Vite is installed:"
+          npm list vite
+          echo "Checking package.json:"
+          cat package.json
+          
+      - name: Build with verbose logging
+        run: |
+          echo "Running build command:"
+          npm run build --verbose
+          
+      - name: Debug - List directory contents after build
         run: |
           echo "Current directory:"
           ls -la
-          echo "Dist directory:"
+          echo "Checking if dist directory exists:"
           ls -la dist || echo "dist directory does not exist"
           
       - name: Create dist directory if it doesn't exist
