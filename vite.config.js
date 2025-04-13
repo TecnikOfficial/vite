@@ -2,7 +2,7 @@ import { defineConfig } from "vite"
 
 export default defineConfig({
   // Base path for GitHub Pages deployment
-  base: "/",
+  base: "/vite/",
 
   // Development server configuration
   server: {
