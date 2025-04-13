@@ -1,37 +1,31 @@
-# TecNik Official Website
+# Tecnik Official Site
 
-This is the official website for TecNik, built with Vite for improved performance and security.
+This is the official website for TecNik, built with Vite for optimal performance and security.
 
 ## Features
 
 - Fast loading with Vite bundling
-- Optimized assets
+- Responsive design for all devices
+- Interactive elements with smooth animations
 - Service worker for offline functionality
-- GitHub Pages deployment
+- Automatic deployment to GitHub Pages
 
 ## Development
 
-To run the development server:
+To run this project locally:
 
-\`\`\`bash
-npm install
-npm run dev
-\`\`\`
-
-## Building
-
-To build the site for production:
-
-\`\`\`bash
-npm run build
-\`\`\`
-
-The built files will be in the `dist` directory.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Build for production: `npm run build`
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages when changes are pushed to the main branch.
+This project is set up for automatic deployment to GitHub Pages. Simply push to the main branch, and the GitHub Actions workflow will handle the build and deployment process.
 
-## License
+## Technologies Used
 
-All rights reserved.
+- Vite for fast bundling and development
+- Modern JavaScript (ES6+)
+- Service Worker for offline capabilities
+- GitHub Actions for CI/CD
