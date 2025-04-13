@@ -1,19 +1,8 @@
 {
-  "name": "vite-project",
+  "name": "my-v0-project",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.0",
-  "homepage": "https://TecnikOfficial.github.io/vite/",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  },
-  "dependencies": {
-    // Add your dependencies here, e.g., "react": "^17.0.0" for React
-  },
-  "devDependencies": {
-    "vite": "^5.0.0",
-    "gh-pages": "^3.2.3"
+    "build": "echo 'no build script'"
   }
 }
