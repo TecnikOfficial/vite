@@ -1,8 +1,15 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "tecnik-official-site",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "build": "echo 'no build script'"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "terser": "^5.26.0",
+    "vite": "^5.1.4"
   }
 }
