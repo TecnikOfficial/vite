@@ -26,13 +26,29 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          # Removed the cache configuration
           
       - name: Install dependencies
         run: npm install
         
       - name: Build
         run: npm run build
+      
+      - name: Debug - List directory contents
+        run: |
+          echo "Current directory:"
+          ls -la
+          echo "Dist directory:"
+          ls -la dist || echo "dist directory does not exist"
+          
+      - name: Create dist directory if it doesn't exist
+        run: mkdir -p dist
+        
+      - name: Create a test file if dist is empty
+        run: |
+          if [ -z "$(ls -A dist)" ]; then
+            echo "Dist directory is empty, creating a test file"
+            echo "<html><body><h1>Test Page</h1></body></html>" > dist/index.html
+          fi
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
