@@ -11,16 +11,6 @@ export default defineConfig({
     emptyOutDir: true, // Empty the output directory before building
     minify: "terser", // Use terser for better minification
     sourcemap: false, // Disable sourcemaps for production
-
-    // Ensure the build doesn't fail on warnings
-    rollupOptions: {
-      output: {
-        // Ensure assets are properly referenced
-        assetFileNames: "assets/[name].[hash].[ext]",
-        chunkFileNames: "assets/[name].[hash].js",
-        entryFileNames: "assets/[name].[hash].js",
-      },
-    },
   },
 
   // Server configuration for development
@@ -36,7 +26,4 @@ export default defineConfig({
       "@": resolve(__dirname, "src"),
     },
   },
-
-  // Ensure the build doesn't fail on warnings
-  logLevel: "info",
 })
