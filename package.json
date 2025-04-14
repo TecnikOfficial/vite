@@ -1,20 +1,8 @@
 {
-  "name": "tecnik-official-site",
+  "name": "my-v0-project",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "terser": "^5.19.2",
-    "vite": "^5.0.10"
-  },
-  "dependencies": {},
-  "engines": {
-    "node": ">=18.0.0"
-  },
-  "browserslist": [">0.2%", "not dead", "not op_mini all"]
+    "build": "echo 'no build script'"
+  }
 }
