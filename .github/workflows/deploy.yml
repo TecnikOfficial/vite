@@ -29,11 +29,50 @@ jobs:
       - name: Install dependencies
         run: npm install
         
+      - name: Debug - List files before build
+        run: ls -la
+        
+      - name: Create dist directory if it doesn't exist
+        run: mkdir -p dist
+        
       - name: Build
         run: npm run build
         
-      - name: List files after build
-        run: ls -la
+      - name: Debug - List files after build
+        run: |
+          echo "Current directory:"
+          ls -la
+          echo "Dist directory (if exists):"
+          ls -la dist || echo "dist directory is empty or doesn't exist"
+        
+      - name: Create fallback page if build fails
+        run: |
+          if [ ! -f "dist/index.html" ]; then
+            echo "Creating fallback page..."
+            mkdir -p dist
+            cat > dist/index.html << 'EOL'
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Tecnik - Official Site</title>
+              <style>
+                body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+                h1 { color: green; }
+                p { margin: 20px 0; }
+                a { color: green; text-decoration: none; }
+                a:hover { text-decoration: underline; }
+              </style>
+            </head>
+            <body>
+              <h1>Tecnik Official Site</h1>
+              <p>The site is currently being updated. Please check back soon!</p>
+              <p><a href="https://tecnik.bio.link/">Contact Us</a></p>
+            </body>
+            </html>
+            EOL
+          fi
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
