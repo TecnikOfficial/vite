@@ -50,28 +50,28 @@ jobs:
           if [ ! -f "dist/index.html" ]; then
             echo "Creating fallback page..."
             mkdir -p dist
-            cat > dist/index.html << 'EOL'
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-              <meta charset="UTF-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
-              <title>Tecnik - Official Site</title>
-              <style>
-                body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-                h1 { color: green; }
-                p { margin: 20px 0; }
-                a { color: green; text-decoration: none; }
-                a:hover { text-decoration: underline; }
-              </style>
-            </head>
-            <body>
-              <h1>Tecnik Official Site</h1>
-              <p>The site is currently being updated. Please check back soon!</p>
-              <p><a href="https://tecnik.bio.link/">Contact Us</a></p>
-            </body>
-            </html>
-            EOL
+            cat > dist/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tecnik - Official Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+    h1 { color: green; }
+    p { margin: 20px 0; }
+    a { color: green; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>Tecnik Official Site</h1>
+  <p>The site is currently being updated. Please check back soon!</p>
+  <p><a href="https://tecnik.bio.link/">Contact Us</a></p>
+</body>
+</html>
+EOF
           fi
         
       - name: Setup Pages
