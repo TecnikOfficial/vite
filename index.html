@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://*.hearthis.at; connect-src 'self' https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net https://tecnik.bio.link; img-src 'self' data: https://www.svgrepo.com https://play.vsthemes.org https://tecnik.pages.dev; media-src 'self' https://tecnik.pages.dev; frame-src 'self' https://chromedino.com https://*.hearthis.at;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://*.hearthis.at; connect-src 'self' https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net https://tecnik.bio.link; img-src 'self' https://www.svgrepo.com https://play.vsthemes.org https://tecnik.pages.dev; media-src 'self' https://tecnik.pages.dev; data: blob:; frame-src 'self' https://chromedino.com https://*.hearthis.at;">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -15,7 +14,6 @@
     <meta name="google-site-verification" content="ebIZ0CJJW0rZZjBOIn0btfrn2vYjA9IDo3GLpBlNYQQ"/>
     <meta name="author" content="TecNik">
     <meta name="generator" content="TecNik">
-    <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="TecNik - Official Site">
     <meta property="og:description" content="@TecNikOfficial & @SyncKingMusic : Where tech meets music! Explore safe Windows / gaming tips alongside Songs that blend human creativity + Ai❤️">
@@ -23,19 +21,13 @@
     <meta property="og:image" content="https://tecnik.pages.dev/assets/media/metaimg.avif">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="628">
-    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="TecNik - Official Site">
     <meta name="twitter:description" content="@TecNikOfficial & @SyncKingMusic : Where tech meets music! Explore safe Windows / gaming tips alongside Songs that blend human creativity + Ai❤️">
     <meta name="twitter:image" content="https://tecnik.pages.dev/assets/media/metaimg.webp">
-    <!-- Canonical Link -->
     <link rel="canonical" href="https://tecnik.pages.dev">
-    <!-- Favicon -->
     <link rel="icon" href="https://tecnik.pages.dev/assets/media/favicon.webp" type="image/webp">
-    <!-- Page Title -->
     <title>Tecnik - Official Site</title>
-    <!-- CSS -->
-    <link rel="stylesheet" href="/src/style.css">
 </head>
 <body>
     <div id="loading-screen">
@@ -49,40 +41,35 @@
             Your browser does not support the video tag.
         </video>
         <div class="slider">
-            <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" class="hover-image" title="Click To Copy!" alt="Main Image" width="300" 
-     height="60" loading="lazy">
+            <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" class="hover-image" title="Click To Copy!" alt="Main Image" width="300" height="300" loading="lazy">
             <div class="text three-d" id="slider-text" onclick="changeText()">WELCOME!</div>   
-		<div class="button-container">
+            <div class="button-container">
                 <button class="glow-button" onclick="window.location.href='https://tecnik.bio.link/'" title="📧Connect with Us">Contact</button>
                 <button class="glow-button" id="button2" title="💲Freelance">Services</button>
-      <button class="glow-button" id="button3" title="✔️Completed & Delivered">Projects</button>
+                <button class="glow-button" id="button3" title="✔️Completed & Delivered">Projects</button>
             </div>
-            <!-- Iframe-->
             <div class="iframe-container">
                 <iframe scrolling="no" id="hearthis_at_user_syncking" width="100%" height="350" src="https://app.hearthis.at/syncking/embed/?hcolor=ba1010&css=&skin=black" title="SyncKing" frameborder="0" allowtransparency></iframe>
             </div>
         </div>
         <div class="widget-container">
-            <img src="https://tecnik.pages.dev/assets/media/donate.webp" class="widget-image" title="TYSM❤️" alt="Donate" width="100" 
-     height="100" loading="lazy">
-        </div> 
-		<!-- Donation Overlay -->
-<div id="donation-overlay" class="overlay">
-    <div class="overlay-content">
-        <span class="close-overlay" onclick="closeDonationOverlay()">✖</span>
-        <h2 style="color: green; text-align: center; text-decoration: underline; margin-bottom: 20px;">Choose Payment Method to Support</h2>
-        <div class="button-container">
-            <button class="glow-button" title="Thank" data-url="https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
-            <button class="glow-button" title="you" data-url="https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You')">₹ UPI</button>
-            <button class="glow-button" title="for" data-url="https://www.paypal.me/TecnikOfficial" onclick="handleDonation('https://www.paypal.me/TecnikOfficial')">💲PayPal</button>
+            <img src="https://tecnik.pages.dev/assets/media/donate.webp" class="widget-image" title="TYSM❤️" alt="Donate" width="100" height="100" loading="lazy">
         </div>
-        <div class="button-container">
-            <button class="glow-button" title="your" data-url="https://buymeacoffee.com/tecnik" onclick="handleDonation('https://buymeacoffee.com/tecnik')">Buy me a☕</button>
-            <button class="glow-button" title="support!" data-url="https://ko-fi.com/tecnik" onclick="handleDonation('https://ko-fi.com/tecnik')">Ko-Fi</button>
+        <div id="donation-overlay" class="overlay">
+            <div class="overlay-content">
+                <span class="close-overlay" onclick="closeDonationOverlay()">✖</span>
+                <h2 style="color: green; text-align: center; text-decoration: underline; margin-bottom: 20px;">Choose Payment Method to Support</h2>
+                <div class="button-container">
+                    <button class="glow-button" title="Thank" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
+                    <button class="glow-button" title="you" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You')">₹ UPI</button>
+                    <button class="glow-button" title="for" onclick="handleDonation('https://www.paypal.me/TecnikOfficial')">💲PayPal</button>
+                </div>
+                <div class="button-container">
+                    <button class="glow-button" title="your" onclick="handleDonation('https://buymeacoffee.com/tecnik')">Buy me a☕</button>
+                    <button class="glow-button" title="support!" onclick="handleDonation('https://ko-fi.com/tecnik')">Ko-Fi</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-        <!-- Overlay for Table -->
         <div id="table-overlay" class="overlay">
             <div class="overlay-content">
                 <span class="close-overlay" onclick="closeOverlay()">✖</span>
@@ -125,63 +112,58 @@
                 <h4>Contact using Discord or Email📧: <a href="mailto:TecnikOfficial@Outlook.com">TecnikOfficial@Outlook.com</a></h4>
                 <br>
                 <p style="font-size: 15px;">Please note that the preferred payment method is UPI. Full refunds are only available for payments made via UPI. Payments made through PayPal or Stripe are not eligible for refunds.</p>
-			<BR><p style="font-size: 16px; text-align: center;"><strong>GIVE US FEEDBACK <a href="https://tellonym.me/tecnik">HERE😃</a></strong></p>
+                <br><p style="font-size: 16px; text-align: center;"><strong>GIVE US FEEDBACK <a href="https://tellonym.me/tecnik">HERE😃</a></strong></p>
             </div>
         </div>
-        <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60" 
-     height="60" onclick="openNotificationPanel()" loading="lazy"> 
-    </div>
-<!-- New Overlay for Projects -->
-<div id="projects-overlay" class="overlay">
-    <div class="overlay-content">
-        <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>      
-        <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
-      <br>
-        <div class="scrolling-text">
-        <span>
-            Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
-        </span>
-          <span>
-            Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
-        </span>
-      </div>
-      <br>
-        <h2 style="color: green; text-decoration: underline;">Collaborations:</h2>
-      <br>
-      <div class="scrolling-text">
-        <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
-        <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
-		<br><br>
-      </div>	    
-        <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2>
-      <br>
-        <span>Building WEB App (working along with doctor)</span>
-		<br><br>
-	    <div class="expertise-text">
-    <span style="font-weight: bold;">Expertise in Efficiency | Provides Value for Money Solutions</span>
-</div>
-    </div>
-</div>
-    <!-- Notification Panel Overlay -->
-    <div id="notification-panel">
-        <div class="overlay-content">
-            <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw?sub_confirmation=1" target="_blank">Tecnik Official</a>💻 ?</p><br>
-<p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g?sub_confirmation=1" target="_blank">Syncking</a>🎵 ?</p><br>
-<p>• <a href="https://www.youtube-nocookie.com/embed/videoseries?list=PLzXDhbvRPJ1A33piKX-ss1zjNAVdqu4mM&loop=1&autoplay=1&modestbranding=1" target="_blank">CSGO Montage 😎</a></p><br>
-<p>• <a href="./oldtheme/1.0.html">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p>
+        <div id="projects-overlay" class="overlay">
+            <div class="overlay-content">
+                <span class="close-overlay" onclick="closeProjectsOverlay()">✖</span>      
+                <h2 style="color: green; text-decoration: underline;">Worked as Lead:</h2>
+                <br>
+                <div class="scrolling-text">
+                    <span>
+                        Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
+                    </span>
+                    <span>
+                        Automotive (Social Media Marketing) | Agro Pvt Ltd (Product Label & Logo Design) | Music Distributor (Website Design) | Resume Design (Multiple Clients)
+                    </span>
+                </div>
+                <br>
+                <h2 style="color: green; text-decoration: underline;">Collaborations:</h2>
+                <br>
+                <div class="scrolling-text">
+                    <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
+                    <span>Cover Song Channel (Mix & Mastering), Portfolio Websites (Art Showcase) , Gaming Channel (Montage Edits)</span>
+                </div>
+                <br><br>
+                <h2 style="color: green; text-decoration: underline;">Currently Working On:</h2>
+                <br>
+                <span>Building WEB App (working along with doctor)</span>
+                <br><br>
+                <div class="expertise-text">
+                    <span style="font-weight: bold;">Expertise in Efficiency | Provides Value for Money Solutions</span>
+                </div>
+            </div>
+        </div>
+        <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60" height="60" onclick="openNotificationPanel()" loading="lazy">
+        <div id="notification-panel">
+            <div class="overlay-content">
+                <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UCXucwi4swKyTmCUB9RrFaQw?sub_confirmation=1" target="_blank">Tecnik Official</a>💻 ?</p><br>
+                <p>• Are you subscribed to ▶️<a href="https://www.youtube.com/channel/UC35TPNUnNegZq4mBWvU0o7g?sub_confirmation=1" target="_blank">Syncking</a>🎵 ?</p><br>
+                <p>• <a href="https://www.youtube-nocookie.com/embed/videoseries?list=PLzXDhbvRPJ1A33piKX-ss1zjNAVdqu4mM&loop=1&autoplay=1&modestbranding=1" target="_blank">CSGO Montage 😎</a></p><br>
+                <p>• <a href="./oldtheme/1.0.html">Old Site 🐈 </a>• <a href="https://tecnikofficial.github.io/404">4🚫4</a></p>
+            </div>
         </div>
     </div>
-    <!-- Footer Section -->
     <footer class="footer">
-    Made with<a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">
-    <img src="https://tecnik.pages.dev/assets/media/heart.gif" alt="Heart" title="Listen💓" width="20" height="20" style="vertical-align: bottom;">
-</a>using A.i | Source Code 
-    <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
-        <img src="https://tecnik.pages.dev/assets/media/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20" style="vertical-align: bottom;"></a>
-</footer>
-
-    <!-- Scripts -->
+        Made with<a href="https://youtu.be/71qssscQqH8?feature=shared" target="_blank">
+            <img src="https://tecnik.pages.dev/assets/media/heart.gif" alt="Heart" title="Listen💓" width="20" height="20" style="vertical-align: bottom;">
+        </a>using A.i | Source Code 
+        <a href="https://github.com/TecnikOfficial/TecnikOfficial.github.io" target="_blank">
+            <img src="https://tecnik.pages.dev/assets/media/GITHUB-white.svg" alt="GitHub" title="Github" width="20" height="20" style="vertical-align: bottom;">
+        </a>
+    </footer>
     <script type="module" src="/src/main.js"></script>
-    <script src="https://instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
+    <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
 </html>
