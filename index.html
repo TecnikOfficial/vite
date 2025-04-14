@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://*.hearthis.at; connect-src 'self' https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net https://tecnik.bio.link; img-src 'self' https://www.svgrepo.com https://play.vsthemes.org https://tecnik.pages.dev; media-src 'self' https://tecnik.pages.dev; data: blob:; frame-src 'self' https://chromedino.com https://*.hearthis.at;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://instant.page https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://*.hearthis.at; connect-src 'self' https://chromedino.com https://*.hearthis.at https://cdn.jsdelivr.net https://tecnik.bio.link; img-src 'self' data: https://www.svgrepo.com https://play.vsthemes.org https://tecnik.pages.dev; media-src 'self' https://tecnik.pages.dev; frame-src 'self' https://chromedino.com https://*.hearthis.at;">
     <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -49,8 +49,8 @@
             Your browser does not support the video tag.
         </video>
         <div class="slider">
-            <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" class="hover-image" title="Click To Copy!" alt="Main Image" width="auto" 
-     height="auto" loading="lazy">
+            <img src="https://tecnik.pages.dev/assets/media/tecnikmain4.avif" class="hover-image" title="Click To Copy!" alt="Main Image" width="300" 
+     height="60" loading="lazy">
             <div class="text three-d" id="slider-text" onclick="changeText()">WELCOME!</div>   
 		<div class="button-container">
                 <button class="glow-button" onclick="window.location.href='https://tecnik.bio.link/'" title="📧Connect with Us">Contact</button>
@@ -63,8 +63,8 @@
             </div>
         </div>
         <div class="widget-container">
-            <img src="https://tecnik.pages.dev/assets/media/donate.webp" class="widget-image" title="TYSM❤️" alt="Donate" width="100%" 
-     height="100%" loading="lazy">
+            <img src="https://tecnik.pages.dev/assets/media/donate.webp" class="widget-image" title="TYSM❤️" alt="Donate" width="100" 
+     height="100" loading="lazy">
         </div> 
 		<!-- Donation Overlay -->
 <div id="donation-overlay" class="overlay">
@@ -72,13 +72,13 @@
         <span class="close-overlay" onclick="closeDonationOverlay()">✖</span>
         <h2 style="color: green; text-align: center; text-decoration: underline; margin-bottom: 20px;">Choose Payment Method to Support</h2>
         <div class="button-container">
-            <button class="glow-button" title="Thank" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
-            <button class="glow-button" title="you" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You')">₹ UPI</button>
-            <button class="glow-button" title="for" onclick="handleDonation('https://www.paypal.me/TecnikOfficial')">💲PayPal</button>
+            <button class="glow-button" title="Thank" data-url="https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnikpay-1@okaxis&description=Thank+You')">Google PAY</button>
+            <button class="glow-button" title="you" data-url="https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You" onclick="handleDonation('https://upi2qr.in/pay?name=Tecnik+Official&upiId=tecnik@upi&description=Thank+You')">₹ UPI</button>
+            <button class="glow-button" title="for" data-url="https://www.paypal.me/TecnikOfficial" onclick="handleDonation('https://www.paypal.me/TecnikOfficial')">💲PayPal</button>
         </div>
         <div class="button-container">
-            <button class="glow-button" title="your" onclick="handleDonation('https://buymeacoffee.com/tecnik')">Buy me a☕</button>
-            <button class="glow-button" title="support!" onclick="handleDonation('https://ko-fi.com/tecnik')">Ko-Fi</button>
+            <button class="glow-button" title="your" data-url="https://buymeacoffee.com/tecnik" onclick="handleDonation('https://buymeacoffee.com/tecnik')">Buy me a☕</button>
+            <button class="glow-button" title="support!" data-url="https://ko-fi.com/tecnik" onclick="handleDonation('https://ko-fi.com/tecnik')">Ko-Fi</button>
         </div>
     </div>
 </div>
@@ -128,8 +128,8 @@
 			<BR><p style="font-size: 16px; text-align: center;"><strong>GIVE US FEEDBACK <a href="https://tellonym.me/tecnik">HERE😃</a></strong></p>
             </div>
         </div>
-        <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60px" 
-     height="60px" onclick="openNotificationPanel()" loading="lazy"> 
+        <img src="https://tecnik.pages.dev/assets/media/noti.webp" class="notification-bell" alt="Notification Bell" width="60" 
+     height="60" onclick="openNotificationPanel()" loading="lazy"> 
     </div>
 <!-- New Overlay for Projects -->
 <div id="projects-overlay" class="overlay">
