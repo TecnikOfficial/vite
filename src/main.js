@@ -81,17 +81,6 @@ function updateYear() {
   }
 }
 
-// Start the year update animation
-updateYear()
-
-// Set the initial text immediately when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-  const textElement = document.getElementById("slider-text")
-  textElement.textContent = "Welcome Thanks for Visiting" // Set initial text
-
-  // Add click event listener to change text on click
-  textElement.addEventListener("click", changeText)
-})
 // Heart emoji functionality
 function createHeart() {
   const heart = document.createElement("div")
@@ -116,8 +105,11 @@ function createHeart() {
     heart.remove()
   })
 }
+
 // Function to add heart drop effect to buttons
 function addHeartDropEffectToButtons(buttons) {
+  if (!buttons || buttons.length === 0) return
+
   buttons.forEach((button) => {
     button.addEventListener("mouseover", () => {
       for (let i = 0; i < 10; i++) {
@@ -127,14 +119,6 @@ function addHeartDropEffectToButtons(buttons) {
     })
   })
 }
-
-// Call this function for the donation overlay buttons
-const donationButtons = document.querySelectorAll("#donation-overlay .glow-button")
-addHeartDropEffectToButtons(donationButtons)
-
-// Call this function for the widget image button
-const widgetImage = document.querySelector(".widget-image")
-addHeartDropEffectToButtons([widgetImage])
 
 // Function to handle mouse movement for drawing
 let isDrawing = false
@@ -166,37 +150,16 @@ function stopDrawing() {
   isDrawing = false
 }
 
-// Add event listener for mouse down to start drawing
-document.addEventListener("mousedown", (event) => {
-  startDrawing() // Start drawing on click
-  handleMouseMove(event) // Call handleMouseMove to draw at the click position
-})
-
-// Add event listener for mouse move to draw
-document.addEventListener("mousemove", handleMouseMove) // Start drawing on mouse move
-
-// Add event listener for mouse up to stop drawing
-document.addEventListener("mouseup", stopDrawing) // Stop drawing on mouse up
-
 // Function to open the overlay for services
 function openOverlay() {
   document.getElementById("table-overlay").style.display = "flex" // Show overlay
 }
+
 // Function to close the overlay for services
 function closeOverlay() {
   document.getElementById("table-overlay").style.display = "none" // Hide overlay
 }
 
-// Add event listener to services button
-document.getElementById("button2").addEventListener("click", openOverlay)
-
-// Add event listener to the overlay to close it when clicking outside the content
-document.getElementById("table-overlay").addEventListener("click", function (event) {
-  // Check if the clicked target is the overlay itself
-  if (event.target === this) {
-    closeOverlay() // Close the overlay
-  }
-})
 // Function to open the projects overlay
 function openProjectsOverlay() {
   document.getElementById("projects-overlay").style.display = "flex" // Show overlay
@@ -207,16 +170,6 @@ function closeProjectsOverlay() {
   document.getElementById("projects-overlay").style.display = "none" // Hide overlay
 }
 
-// Add event listener to the projects button
-document.getElementById("button3").addEventListener("click", openProjectsOverlay)
-
-// Add event listener to the projects overlay to close it when clicking outside the content
-document.getElementById("projects-overlay").addEventListener("click", function (event) {
-  // Check if the clicked target is the overlay itself
-  if (event.target === this) {
-    closeProjectsOverlay() // Close the overlay
-  }
-})
 // Function to copy text to clipboard
 function copyToClipboard(text) {
   navigator.clipboard
@@ -228,20 +181,6 @@ function copyToClipboard(text) {
       console.error("Failed to copy: ", err)
     })
 }
-
-// Add event listener for the main image click
-document.addEventListener("DOMContentLoaded", () => {
-  const mainImage = document.querySelector(".hover-image")
-
-  if (mainImage) {
-    mainImage.addEventListener("click", () => {
-      console.log("Main image clicked") // Log to console for debugging
-      copyToClipboard("tecnik.gg") // Copy text to clipboard
-    })
-  } else {
-    console.error("Main image not found")
-  }
-})
 
 // Function to handle donation
 function handleDonation(url) {
@@ -294,17 +233,6 @@ function closeAllOverlays() {
   closeDonationOverlay() // Close donation overlay
 }
 
-// Add event listener to the widget image to open the donation overlay
-document.querySelector(".widget-image").addEventListener("click", openDonationOverlay)
-
-// Add event listener to the donation overlay to close it when clicking outside the content
-document.getElementById("donation-overlay").addEventListener("click", function (event) {
-  // Check if the clicked target is the overlay itself
-  if (event.target === this) {
-    closeDonationOverlay() // Close the overlay
-  }
-})
-
 // Function to open or close the notification panel
 function openNotificationPanel() {
   const notificationPanel = document.getElementById("notification-panel")
@@ -315,36 +243,145 @@ function openNotificationPanel() {
   }
 }
 
-// Add event listener to the notification bell
-document.querySelector(".notification-bell").addEventListener("click", openNotificationPanel)
-
-// Close the notification panel when clicking outside of it
-document.addEventListener("click", (event) => {
-  const notificationPanel = document.getElementById("notification-panel")
-  const bellIcon = document.querySelector(".notification-bell")
-
-  // Check if the click was outside the notification panel and the bell icon
-  if (!notificationPanel.contains(event.target) && !bellIcon.contains(event.target)) {
-    notificationPanel.style.display = "none" // Close the notification panel
-  }
-})
-
 // Function to disable right-click
-document.addEventListener("contextmenu", (e) => {
+function disableRightClick(e) {
   e.preventDefault()
-})
+}
 
-// Check if service workers are supported
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    // Register the service worker
+// Initialize all event listeners when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  // Start the year update animation
+  updateYear()
+
+  // Set initial text
+  const textElement = document.getElementById("slider-text")
+  if (textElement) {
+    textElement.textContent = "Welcome Thanks for Visiting" // Set initial text
+    textElement.addEventListener("click", changeText) // Add click event listener
+  }
+
+  // Add event listeners for mouse drawing
+  document.addEventListener("mousedown", (event) => {
+    startDrawing()
+    handleMouseMove(event)
+  })
+  document.addEventListener("mousemove", handleMouseMove)
+  document.addEventListener("mouseup", stopDrawing)
+
+  // Add event listener to services button
+  const servicesButton = document.getElementById("button2")
+  if (servicesButton) {
+    servicesButton.addEventListener("click", openOverlay)
+  }
+
+  // Add event listener to projects button
+  const projectsButton = document.getElementById("button3")
+  if (projectsButton) {
+    projectsButton.addEventListener("click", openProjectsOverlay)
+  }
+
+  // Add event listener for the main image click
+  const mainImage = document.querySelector(".hover-image")
+  if (mainImage) {
+    mainImage.addEventListener("click", () => {
+      copyToClipboard("tecnik.gg")
+    })
+  }
+
+  // Add event listener to the widget image
+  const widgetImage = document.querySelector(".widget-image")
+  if (widgetImage) {
+    widgetImage.addEventListener("click", openDonationOverlay)
+  }
+
+  // Add event listener to the notification bell
+  const notificationBell = document.querySelector(".notification-bell")
+  if (notificationBell) {
+    notificationBell.addEventListener("click", openNotificationPanel)
+  }
+
+  // Add event listeners to close buttons
+  const closeButtons = document.querySelectorAll(".close-overlay")
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const overlay = this.closest(".overlay")
+      if (overlay) {
+        overlay.style.display = "none"
+      }
+    })
+  })
+
+  // Add event listeners to donation buttons
+  const donationButtons = document.querySelectorAll("#donation-overlay .glow-button")
+  donationButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const url = this.getAttribute("onclick")
+      if (url) {
+        // Extract URL from onclick attribute
+        const match = url.match(/'([^']*)'/)
+        if (match && match[1]) {
+          handleDonation(match[1])
+        }
+      }
+    })
+  })
+
+  // Add heart drop effect to buttons
+  addHeartDropEffectToButtons(document.querySelectorAll("#donation-overlay .glow-button"))
+  if (widgetImage) {
+    addHeartDropEffectToButtons([widgetImage])
+  }
+
+  // Add event listeners to close overlays when clicking outside
+  const overlays = document.querySelectorAll(".overlay")
+  overlays.forEach((overlay) => {
+    overlay.addEventListener("click", function (event) {
+      if (event.target === this) {
+        this.style.display = "none"
+      }
+    })
+  })
+
+  // Close notification panel when clicking outside
+  document.addEventListener("click", (event) => {
+    const notificationPanel = document.getElementById("notification-panel")
+    const bellIcon = document.querySelector(".notification-bell")
+
+    if (
+      notificationPanel &&
+      bellIcon &&
+      !notificationPanel.contains(event.target) &&
+      !bellIcon.contains(event.target)
+    ) {
+      notificationPanel.style.display = "none"
+    }
+  })
+
+  // Disable right-click
+  document.addEventListener("contextmenu", disableRightClick)
+
+  // Register service worker
+  if ("serviceWorker" in navigator) {
     navigator.serviceWorker
-      .register("/service-worker.js")
+      .register("/vite/service-worker.js")
       .then((registration) => {
         console.log("Service Worker registered with scope:", registration.scope)
       })
       .catch((error) => {
         console.error("Service Worker registration failed:", error)
       })
-  })
-}
+  }
+})
+
+// Make functions available globally
+window.changeText = changeText
+window.openOverlay = openOverlay
+window.closeOverlay = closeOverlay
+window.openProjectsOverlay = openProjectsOverlay
+window.closeProjectsOverlay = closeProjectsOverlay
+window.handleDonation = handleDonation
+window.openDonationOverlay = openDonationOverlay
+window.closeDonationOverlay = closeDonationOverlay
+window.closeAllOverlays = closeAllOverlays
+window.openNotificationPanel = openNotificationPanel
+window.copyToClipboard = copyToClipboard
