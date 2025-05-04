@@ -12,7 +12,6 @@ const urlsToCache = [
   "https://tecnik.pages.dev/assets/media/heart.gif",
   "https://tecnik.pages.dev/assets/media/GITHUB-white.svg",
   "https://tecnik.pages.dev/assets/media/video.webm",
-  "https://instant.page/5.2.0",
 ]
 
 // Install event - cache assets
